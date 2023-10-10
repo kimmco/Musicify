@@ -12,7 +12,8 @@ android {
     defaultConfig {
         applicationId = "com.cokimutai.spotify"
         minSdk = 29
-        targetSdk = 33
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -65,15 +66,21 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha07")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 
+    implementation("androidx.media3:media3-datasource-okhttp:1.2.0-alpha02")
     implementation("androidx.media3:media3-exoplayer:1.2.0-alpha02")
     implementation("androidx.media3:media3-ui:1.2.0-alpha02")
-
-
+    implementation("androidx.media3:media3-session:1.2.0-alpha02")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0") // Needed MediaSessionCompat.Token
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    implementation("com.google.accompanist:accompanist-permissions:0.30.0")
     // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
     kapt("androidx.hilt:hilt-compiler:1.0.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.3.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
